@@ -348,6 +348,9 @@ grammars in the local <code>runtime</code> folder.</p>
 </li>
 </ol>
 <blockquote>
+<p>💡 If you do not want to fetch or build grammars, set an environment variable <code>HELIX_DISABLE_AUTO_GRAMMAR_BUILD</code></p>
+</blockquote>
+<blockquote>
 <p>💡 Tree-sitter grammars can be fetched and compiled if not pre-packaged. Fetch
 grammars with <code>hx --grammar fetch</code> and compile them with
 <code>hx --grammar build</code>. This will install them in
@@ -811,7 +814,7 @@ useful when you're simply looking over text and not actively editing it.</p>
 <div class="table-wrapper"><table><thead><tr><th>Key</th><th>Description</th><th>Command</th></tr></thead><tbody>
 <tr><td><code>g</code></td><td>Go to line number <code>&lt;n&gt;</code> else start of file</td><td><code>goto_file_start</code></td></tr>
 <tr><td><code>e</code></td><td>Go to the end of the file</td><td><code>goto_last_line</code></td></tr>
-<tr><td><code>f</code></td><td>Go to files in the selection</td><td><code>goto_file</code></td></tr>
+<tr><td><code>f</code></td><td>Go to files in the selections</td><td><code>goto_file</code></td></tr>
 <tr><td><code>h</code></td><td>Go to the start of the line</td><td><code>goto_line_start</code></td></tr>
 <tr><td><code>l</code></td><td>Go to the end of the line</td><td><code>goto_line_end</code></td></tr>
 <tr><td><code>s</code></td><td>Go to first non-whitespace character of the line</td><td><code>goto_first_nonwhitespace</code></td></tr>
@@ -852,8 +855,8 @@ useful when you're simply looking over text and not actively editing it.</p>
 <tr><td><code>w</code>, <code>Ctrl-w</code></td><td>Switch to next window</td><td><code>rotate_view</code></td></tr>
 <tr><td><code>v</code>, <code>Ctrl-v</code></td><td>Vertical right split</td><td><code>vsplit</code></td></tr>
 <tr><td><code>s</code>, <code>Ctrl-s</code></td><td>Horizontal bottom split</td><td><code>hsplit</code></td></tr>
-<tr><td><code>f</code></td><td>Go to files in the selection in horizontal splits</td><td><code>goto_file</code></td></tr>
-<tr><td><code>F</code></td><td>Go to files in the selection in vertical splits</td><td><code>goto_file</code></td></tr>
+<tr><td><code>f</code></td><td>Go to files in the selections in horizontal splits</td><td><code>goto_file</code></td></tr>
+<tr><td><code>F</code></td><td>Go to files in the selections in vertical splits</td><td><code>goto_file</code></td></tr>
 <tr><td><code>h</code>, <code>Ctrl-h</code>, <code>Left</code></td><td>Move to left split</td><td><code>jump_view_left</code></td></tr>
 <tr><td><code>j</code>, <code>Ctrl-j</code>, <code>Down</code></td><td>Move to split below</td><td><code>jump_view_down</code></td></tr>
 <tr><td><code>k</code>, <code>Ctrl-k</code>, <code>Up</code></td><td>Move to split above</td><td><code>jump_view_up</code></td></tr>
@@ -1198,6 +1201,7 @@ Languages</a> guide for more language configuration information.</p>
 <tr><td>haskell-persistent</td><td>✓</td><td></td><td></td><td></td></tr>
 <tr><td>hcl</td><td>✓</td><td></td><td>✓</td><td><code>terraform-ls</code></td></tr>
 <tr><td>heex</td><td>✓</td><td>✓</td><td></td><td><code>elixir-ls</code></td></tr>
+<tr><td>hocon</td><td>✓</td><td></td><td>✓</td><td></td></tr>
 <tr><td>hosts</td><td>✓</td><td></td><td></td><td></td></tr>
 <tr><td>html</td><td>✓</td><td></td><td></td><td><code>vscode-html-language-server</code></td></tr>
 <tr><td>hurl</td><td>✓</td><td></td><td>✓</td><td></td></tr>
@@ -1257,7 +1261,7 @@ Languages</a> guide for more language configuration information.</p>
 <tr><td>ponylang</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
 <tr><td>prisma</td><td>✓</td><td></td><td></td><td><code>prisma-language-server</code></td></tr>
 <tr><td>prolog</td><td></td><td></td><td></td><td><code>swipl</code></td></tr>
-<tr><td>protobuf</td><td>✓</td><td></td><td>✓</td><td><code>bufls</code>, <code>pb</code></td></tr>
+<tr><td>protobuf</td><td>✓</td><td>✓</td><td>✓</td><td><code>bufls</code>, <code>pb</code></td></tr>
 <tr><td>prql</td><td>✓</td><td></td><td></td><td></td></tr>
 <tr><td>purescript</td><td>✓</td><td>✓</td><td></td><td><code>purescript-language-server</code></td></tr>
 <tr><td>python</td><td>✓</td><td>✓</td><td>✓</td><td><code>pylsp</code></td></tr>
@@ -1274,7 +1278,7 @@ Languages</a> guide for more language configuration information.</p>
 <tr><td>ruby</td><td>✓</td><td>✓</td><td>✓</td><td><code>solargraph</code></td></tr>
 <tr><td>rust</td><td>✓</td><td>✓</td><td>✓</td><td><code>rust-analyzer</code></td></tr>
 <tr><td>sage</td><td>✓</td><td>✓</td><td></td><td></td></tr>
-<tr><td>scala</td><td>✓</td><td></td><td>✓</td><td><code>metals</code></td></tr>
+<tr><td>scala</td><td>✓</td><td>✓</td><td>✓</td><td><code>metals</code></td></tr>
 <tr><td>scheme</td><td>✓</td><td></td><td>✓</td><td></td></tr>
 <tr><td>scss</td><td>✓</td><td></td><td></td><td><code>vscode-css-language-server</code></td></tr>
 <tr><td>slint</td><td>✓</td><td></td><td>✓</td><td><code>slint-lsp</code></td></tr>
