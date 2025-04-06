@@ -456,10 +456,10 @@ use the following command to build the release binary and package it into a <cod
 As long as you leave a <code>target/release/hx</code> file, it will get packaged with <code>cargo deb --no-build</code></p>
 </blockquote>
 <blockquote>
-<p>💡 Don't worry about the repeated</p>
+<p>💡 Don't worry about the following:</p>
 <pre><code>warning: Failed to find dependency specification
 </code></pre>
-<p>warnings. Cargo deb just reports which packaged files it didn't derive dependencies for. But
+<p>Cargo deb just reports which packaged files it didn't derive dependencies for. But
 so far the dependency deriving seams very good, even if some of the grammar files are skipped.</p>
 </blockquote>
 <p>You can find the resulted <code>.deb</code> in <code>target/debian/</code>. It should contain everything it needs, including the</p>
@@ -1615,6 +1615,7 @@ Languages</a> guide for more language configuration information.</p>
 <tr><td>d</td><td>✓</td><td>✓</td><td>✓</td><td><code>serve-d</code></td></tr>
 <tr><td>dart</td><td>✓</td><td>✓</td><td>✓</td><td><code>dart</code></td></tr>
 <tr><td>dbml</td><td>✓</td><td></td><td></td><td></td></tr>
+<tr><td>debian</td><td>✓</td><td></td><td></td><td></td></tr>
 <tr><td>devicetree</td><td>✓</td><td></td><td></td><td></td></tr>
 <tr><td>dhall</td><td>✓</td><td>✓</td><td></td><td><code>dhall-lsp-server</code></td></tr>
 <tr><td>diff</td><td>✓</td><td></td><td></td><td></td></tr>
@@ -1697,7 +1698,7 @@ Languages</a> guide for more language configuration information.</p>
 <tr><td>jsonnet</td><td>✓</td><td></td><td></td><td><code>jsonnet-language-server</code></td></tr>
 <tr><td>jsx</td><td>✓</td><td>✓</td><td>✓</td><td><code>typescript-language-server</code></td></tr>
 <tr><td>julia</td><td>✓</td><td>✓</td><td>✓</td><td><code>julia</code></td></tr>
-<tr><td>just</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>just</td><td>✓</td><td>✓</td><td>✓</td><td><code>just-lsp</code></td></tr>
 <tr><td>kdl</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
 <tr><td>koka</td><td>✓</td><td></td><td>✓</td><td><code>koka</code></td></tr>
 <tr><td>kotlin</td><td>✓</td><td>✓</td><td>✓</td><td><code>kotlin-language-server</code></td></tr>
@@ -1754,7 +1755,7 @@ Languages</a> guide for more language configuration information.</p>
 <tr><td>ponylang</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
 <tr><td>powershell</td><td>✓</td><td></td><td></td><td></td></tr>
 <tr><td>prisma</td><td>✓</td><td>✓</td><td></td><td><code>prisma-language-server</code></td></tr>
-<tr><td>prolog</td><td></td><td></td><td></td><td><code>swipl</code></td></tr>
+<tr><td>prolog</td><td>✓</td><td></td><td>✓</td><td><code>swipl</code></td></tr>
 <tr><td>protobuf</td><td>✓</td><td>✓</td><td>✓</td><td><code>buf</code>, <code>pb</code>, <code>protols</code></td></tr>
 <tr><td>prql</td><td>✓</td><td></td><td></td><td></td></tr>
 <tr><td>purescript</td><td>✓</td><td>✓</td><td></td><td><code>purescript-language-server</code></td></tr>
@@ -1827,6 +1828,7 @@ Languages</a> guide for more language configuration information.</p>
 <tr><td>wat</td><td>✓</td><td></td><td></td><td><code>wat_server</code></td></tr>
 <tr><td>webc</td><td>✓</td><td></td><td></td><td></td></tr>
 <tr><td>werk</td><td>✓</td><td></td><td></td><td></td></tr>
+<tr><td>wesl</td><td>✓</td><td>✓</td><td></td><td></td></tr>
 <tr><td>wgsl</td><td>✓</td><td></td><td></td><td><code>wgsl-analyzer</code></td></tr>
 <tr><td>wit</td><td>✓</td><td></td><td>✓</td><td></td></tr>
 <tr><td>wren</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
@@ -2475,7 +2477,7 @@ berry = "#2A2A4D"
 </ul>
 </li>
 <li>
-<p><code>label</code></p>
+<p><code>label</code> - <code>.class</code>, <code>#id</code> in CSS, etc.</p>
 </li>
 <li>
 <p><code>punctuation</code></p>
@@ -2534,7 +2536,7 @@ berry = "#2A2A4D"
 <p><code>namespace</code></p>
 </li>
 <li>
-<p><code>special</code></p>
+<p><code>special</code> - <code>derive</code> in Rust, etc.</p>
 </li>
 <li>
 <p><code>markup</code></p>
